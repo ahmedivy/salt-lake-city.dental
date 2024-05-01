@@ -11,6 +11,12 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.7.0)(tailwindcss@3.4.3)
+  '@fontsource-variable/mada':
+    specifier: ^5.0.5
+    version: 5.0.5
+  '@fontsource-variable/montserrat':
+    specifier: ^5.0.19
+    version: 5.0.19
   astro:
     specifier: ^4.7.0
     version: 4.7.0(typescript@5.4.5)
@@ -613,6 +619,14 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/mada@5.0.5:
+    resolution: {integrity: sha512-h1zIRmPMfKmDpnmLt/lj4b7M48TXZ+IYlg9LBxqpC3q0GaRKTPVMVjFm82qL9bV4n6fMAORoWAWqPAcQHERo2w==}
+    dev: false
+
+  /@fontsource-variable/montserrat@5.0.19:
+    resolution: {integrity: sha512-vOlVjdGock2yBOeBbg5qexPa1TJM/PS8Nx9YlF6DFEtFf/Y5ayDbZRvV/WPj8W2vk7/aDxUEtTAp/Qp8wK9hNQ==}
+    dev: false
 
   /@img/sharp-darwin-arm64@0.33.3:
     resolution: {integrity: sha512-FaNiGX1MrOuJ3hxuNzWgsT/mg5OHG/Izh59WW2mk1UwYHUwtfbhk5QNKYZgxf0pLOhx9ctGiGa2OykD71vOnSw==}
