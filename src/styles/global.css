@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-100: #5cb8b2;
+    --primary-200: #3c9b95;
+    --primary-300: #005a56;
+    --accent-100: #ff6f61;
+    --accent-200: #8f0010;
+    --accent-300: #ed7868;
+    --foreground-100: #333333;
+    --foreground-200: #5c5c5c;
+    --background-100: #f0f7f4;
+    --background-200: #e6edea;
+    --background-300: #bdc4c1;
+  }
+}
+
+@layer base {
+  * {
+    @apply font-palanquin;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-mada;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
