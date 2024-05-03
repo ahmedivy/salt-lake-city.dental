@@ -15,7 +15,12 @@
     "@fontsource-variable/mada": "^5.0.5",
     "@fontsource-variable/montserrat": "^5.0.19",
     "astro": "^4.7.0",
+    "lucide-astro": "^0.377.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14"
   }
 }
