@@ -1,9 +1,10 @@
 ---
+import Button from "../components/ui/Button.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="SaltLakeCity.Dental">
-  <main class="min-h-screen relative w-full overflow-x-hidden">
+  <main class="min-h-screen relative w-full overflow-x-hidden flex flex-col">
     <div
       class="size-[700px] rounded-full absolute -top-[150px] left-[45%] bg-accent -z-20 blur-2xl opacity-80"
     >
@@ -25,10 +26,42 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <a href="#" class="">Blog</a>
         <a href="#" class="">Documentation</a>
 
-        <a href="#" class="bg-foreground text-white px-4 py-2 rounded-xl lg:ml-6">
+        <a
+          href="#"
+          class="bg-foreground text-white px-4 py-2 rounded-xl lg:ml-6"
+        >
           Book a Consult
         </a>
       </nav>
     </header>
+    <div
+      class="h-full flex-grow container mx-auto flex flex-col items-center justify-center gap-4 lg:gap-8"
+    >
+      <h2
+        class="text-6xl font-mada mt-10 leading-[80px] tracking-normal max-w-[500px] text-center"
+      >
+        High End Dentistry and Smile Design
+      </h2>
+      <p class="font-medium text-lg max-w-[530px] text-center">
+        Preventative care, cosmetic dentistry, and modern implant solutions in
+        Salt Lake City
+      </p>
+      <Button> Book a Consult </Button>
+      <div class="flex items-center gap-4">
+        <span class="w-8 h-[1px] bg-[#5C5C5C]"></span>
+        <span class="text-[#5C5C5C] uppercase text-xs tracking-wider">or</span>
+        <span class="w-8 h-[1px] bg-[#5C5C5C]"></span>
+      </div>
+      <div class="flex items-center">
+        <input
+          type="email"
+          placeholder="Email address"
+          class="flex h-10 w-full min-w-[230px] rounded-l-3xl border border-foreground/50 px-4 py-2 text-sm  placeholder:text-foreground/50 disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none"
+        />
+        <Button class="rounded-none rounded-r-3xl bg-foreground/50 text-white">
+          Subscribe
+        </Button>
+      </div>
+    </div>
   </main>
 </BaseLayout>
