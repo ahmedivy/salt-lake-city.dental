@@ -17,6 +17,9 @@ dependencies:
   '@fontsource-variable/montserrat':
     specifier: ^5.0.19
     version: 5.0.19
+  '@fontsource/palanquin':
+    specifier: ^5.0.13
+    version: 5.0.13
   astro:
     specifier: ^4.7.0
     version: 4.7.0(typescript@5.4.5)
@@ -651,6 +654,10 @@ packages:
 
   /@fontsource-variable/montserrat@5.0.19:
     resolution: {integrity: sha512-vOlVjdGock2yBOeBbg5qexPa1TJM/PS8Nx9YlF6DFEtFf/Y5ayDbZRvV/WPj8W2vk7/aDxUEtTAp/Qp8wK9hNQ==}
+    dev: false
+
+  /@fontsource/palanquin@5.0.13:
+    resolution: {integrity: sha512-4sKyAqYYBJSxJZ5qcHnt2NujV44TzJGhOZbB9d46yq1VPBBhIULao69MZtmHCWlE7yT3T9JNAWsWZTIP9b0B1Q==}
     dev: false
 
   /@img/sharp-darwin-arm64@0.33.3:
