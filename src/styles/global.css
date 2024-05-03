@@ -10,8 +10,8 @@
     --accent-100: #ff6f61;
     --accent-200: #8f0010;
     --accent-300: #ed7868;
-    --foreground-100: #333333;
-    --foreground-200: #5c5c5c;
+    --foreground-100: 0 0% 20%;
+    --foreground-200: 0 0% 36%;
     --background-100: #f0f7f4;
     --background-200: #e6edea;
     --background-300: #bdc4c1;
