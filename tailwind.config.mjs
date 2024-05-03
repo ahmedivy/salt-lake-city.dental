@@ -19,11 +19,11 @@ export default {
         accent: {
           DEFAULT: "var(--accent-100)",
           200: "var(--accent-200)",
-		  300: "var(--accent-300)",
+          300: "var(--accent-300)",
         },
         foreground: {
-          DEFAULT: "var(--foreground-100)",
-          200: "var(--foreground-200)",
+          DEFAULT: "hsl(var(--foreground-100))",
+          200: "hsl(var(--foreground-200))",
         },
         background: {
           DEFAULT: "var(--background-100)",
