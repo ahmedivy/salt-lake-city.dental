@@ -15,6 +15,7 @@ export default {
           DEFAULT: "var(--primary-100)",
           200: "var(--primary-200)",
           300: "var(--primary-300)",
+          400: "var(--primary-400)",
         },
         accent: {
           DEFAULT: "var(--accent-100)",
