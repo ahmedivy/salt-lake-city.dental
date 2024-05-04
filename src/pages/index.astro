@@ -2,34 +2,37 @@
 import Button from "../components/ui/Button.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+import arrow from "../images/arrow.svg";
+import doctorImage from "../images/doctor.png";
 import teethImage from "../images/teeth.svg";
+import toothbrushImage from "../images/toothbrush.svg";
 ---
 
 <BaseLayout title="SaltLakeCity.Dental">
   <main class="min-h-screen relative w-full overflow-x-hidden flex flex-col">
     <div
-      class="size-[700px] rounded-full absolute -top-[150px] left-[45%] bg-accent -z-20 blur-3xl opacity-70"
+      class="size-[300px] lg:size-[700px] rounded-full absolute -top-[150px] left-[45%] bg-accent -z-10 blur-3xl opacity-70"
     >
     </div>
     <div
-      class="size-[700px] rounded-full absolute -top-[80px] left-[70%] bg-primary blur-3xl opacity-70 -z-30"
+      class="size-[300px] lg:size-[700px] rounded-full absolute -top-[80px] left-[70%] bg-primary blur-3xl opacity-70 -z-20"
     >
     </div>
     <Image
       src={teethImage}
       alt="Teeth"
-      class="absolute bottom-80 right-80"
-      />
+      class="absolute bottom-10 right-4 max-lg:size-32 lg:bottom-80 lg:right-80 lg:block"
+    />
 
     <header
-      class="container mx-auto w-full flex items-center p-4 lg:px-8 lg:py-4 bg-background-200 rounded-3xl mt-5 opacity-100"
+      class="container mx-auto w-full flex items-center p-4 lg:px-8 lg:py-4 lg:bg-background-200 lg:rounded-3xl lg:mt-5 opacity-100"
     >
       <h1 class="font-montserrat text-lg">SaltLakeCity.dental</h1>
       <nav
-        class="flex items-center lg:gap-8 ml-auto text-black font-semibold text-md"
+        class="hidden lg:flex items-center lg:gap-8 ml-auto text-black font-semibold text-md"
       >
-        <a href="#" class="">Meet The Doctor</a>
+        <a href="#meet-the-doctor" class="">Meet The Doctor</a>
         <a href="#" class="">Services</a>
         <a href="#" class="">Blog</a>
         <a href="#" class="">Documentation</a>
@@ -41,30 +44,111 @@ import teethImage from "../images/teeth.svg";
           Book a Consult
         </a>
       </nav>
+
+      <button
+        class="lg:hidden ml-auto"
+        aria-label="Open menu"
+        aria-haspopup="true"
+        aria-controls="mobile-menu"
+        id="mobile-menu-button"
+      >
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+      <div class="hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-10"></div>
+        <!-- <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-4 py-4 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
+        </div>
+        <div
+          class="size-[300px] lg:size-[700px] rounded-full absolute -top-[150px] left-[45%] bg-accent -z-20 blur-3xl opacity-70"
+        >
+        </div> -->
+        <div
+          class="size-[300px] lg:size-[700px] rounded-full absolute -top-[80px] left-[70%] bg-primary blur-3xl opacity-70 -z-30"
+        >
+          <div class="flex items-center justify-between">
+            <a class="font-montserrat text-lg" href="/">SaltLakeCity.dental</a>
+
+            <button
+              type="button"
+              class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              id="mobile-menu-button-close"
+            >
+              <span class="sr-only">Close menu</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root px-2">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-4 py-6 mt-10">
+                <a href="#meet-the-doctor" class="font-semibold block text-lg"
+                  >Meet The Doctor</a
+                >
+                <a href="#services" class="font-semibold block text-lg"
+                  >Services</a
+                >
+                <a href="/blog" class="font-semibold block text-lg">Blog</a>
+                <a href="/docs" class="font-semibold block text-lg">Docs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <div
-      class="h-full flex-grow container mx-auto flex flex-col items-center justify-center gap-4 lg:gap-8"
+      class="h-full flex-grow container mx-auto flex flex-col items-center max-lg:mt-16 lg:justify-center gap-4 lg:gap-8 p-8"
     >
       <h2
-        class="text-6xl font-mada mt-10 leading-[80px] tracking-normal max-w-[500px] text-center"
+        class="text-4xl lg:text-6xl font-mada lg:mt-10 leading-[50px] lg:leading-[80px] tracking-normal max-w-[500px] text-center"
       >
         High End Dentistry and Smile Design
       </h2>
-      <p class="font-medium text-xl max-w-[530px] text-center mt-3">
+      <p
+        class="font-medium text-lg lg:text-xl max-w-[530px] text-center lg:mt-3"
+      >
         Preventative care, cosmetic dentistry, and modern implant solutions in
         Salt Lake City
       </p>
       <Button> Book a Consult </Button>
       <div class="flex items-center gap-4">
         <span class="w-8 h-[0.5px] bg-foreground-200/50"></span>
-        <span class="text-foreground-200/50 uppercase text-xs tracking-wider">or</span>
+        <span class="text-foreground-200/50 uppercase text-xs tracking-wider"
+          >or</span
+        >
         <span class="w-8 h-[0.5px] bg-foreground-200/50"></span>
       </div>
       <div class="flex items-center">
         <input
           type="email"
           placeholder="Email address"
-          class="flex h-10 w-full min-w-[230px] rounded-l-3xl border border-foreground/50 px-4 py-2 text-sm placeholder:text-foreground/50 disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none"
+          class="flex h-10 w-full lg:min-w-[230px] rounded-l-3xl border border-foreground/50 px-4 py-2 text-sm placeholder:text-foreground/50 disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none"
         />
         <Button class="rounded-none rounded-r-3xl bg-foreground/50 text-white">
           Subscribe
@@ -72,4 +156,62 @@ import teethImage from "../images/teeth.svg";
       </div>
     </div>
   </main>
+  <section id="meet-the-doctor" class="w-full lg:py-48 bg-background relative">
+    <div
+      class="absolute bottom-0 left-0 lg:bottom-10 lg:left-10 hidden lg:block"
+    >
+      <Image src={toothbrushImage} alt="Toothbrush" class="lg:scale-75" />
+      <Image src={arrow} alt="Arrow" class="g:scale-75 lg:-translate-y-12" />
+    </div>
+    <div
+      class="container mx-auto px-8 py-24 lg:px-48 lg:py-40 bg-primary-400 lg:rounded-[3rem]"
+    >
+      <h2 class="text-4xl lg:text-7xl font-mada text-center mb-16 lg:mb-32">
+        Meet The Doctor
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4">
+        <div class="">
+          <Image
+            src={doctorImage}
+            alt="Dr. Cierra Diamse"
+            class="rounded-3xl mx-auto"
+          />
+        </div>
+        <div class="mx-auto">
+          <p class="text-lg max-w-[500px]">
+            <span class="font-bold text-xl block mb-2">
+              Dr. Cierra Diamse
+            </span>
+            is committed to promoting a holistic approach to dental wellness. Her
+            primary objective is to assist each patient in achieving a beautiful
+            smile while also enjoying optimal oral health. Through the emphasis on
+            preventative care and cosmetic excellence and the use of modern techniques
+            combined with personalized attention, Dr. Diamse delivers unmatched service.
+          </p>
+          <h3 class="text-lg font-semibold my-6">Credentials and Expertise</h3>
+          <ul class="font-semibold list-disc pl-5">
+            <li>Board certified with over 10 years of experience</li>
+            <li>Specialized training in cosmetic dentistry and smile design</li>
+            <li>Member of [Relevant Dental Associations]</li>
+            <li>[Any other significant achievements or certifications]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<script>
+  function toggleMenu() {
+    const mobileMenu = document.querySelector('[role="dialog"]');
+    if (!mobileMenu) return;
+    mobileMenu.classList.toggle("hidden");
+  }
+
+  document
+    .getElementById("mobile-menu-button")
+    ?.addEventListener("click", toggleMenu);
+  document
+    .getElementById("mobile-menu-button-close")
+    ?.addEventListener("click", toggleMenu);
+</script>
