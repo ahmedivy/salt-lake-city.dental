@@ -266,9 +266,9 @@ import ServiceCard from "../components/ServiceCard.astro";
       </div>
     </div>
   </section>
-  <section id="testimonials" class="bg-accent-300 py-12 md:py-20 lg:py-32">
+  <section id="testimonials" class="bg-accent-300 p-6 py-12 md:py-20 lg:py-32">
     <div
-      class="container mx-auto bg-background grid grid-cols-1 lg:grid-cols-2 p-6 lg:py-12 lg:px-48 rounded-3xl"
+      class="container mx-auto bg-background grid grid-cols-1 lg:grid-cols-2 p-6 lg:py-12 lg:px-48 rounded-3xl gap-8"
     >
       <div class="">
         <p class="font-medium max-w-[400px]">
@@ -288,9 +288,45 @@ import ServiceCard from "../components/ServiceCard.astro";
           </a>
         </div>
       </div>
-      <div class="w-full h-full rounded-2xl bg-accent-300"></div>
+      <div
+        class="w-full h-48 lg:h-full rounded-2xl bg-accent-300 max-lg:order-first"
+      >
+      </div>
     </div>
   </section>
-</BaseLayout>
+  <section id="contact" class="py-12 lg:py-24 bg-background">
+    <div class="mx-auto container lg:px-48 px-6">
+      <h2 class="text-4xl lg:text-7xl">
+        {content.contact.title}
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 mt-20 gap-8">
+        <div class="max-w-[400px]">
+          <p class="lg:text-lg">
+            {content.contact.description}
+          </p>
+        </div>
+        <div class="bg-[#BEC4C1] rounded-2xl p-4 mx-auto max-w-72">
+          <Image
+            src={content.contact.image}
+            alt="Contact"
+            class="rounded-2xl"
+          />
+          <p class="mt-6">
+            <span class="font-semibold">Address: </span>{
+              content.contact.address
+            }
+          </p>
+          <p class="mt-2">
+            <span class="font-semibold">Phone: </span>{content.contact.phone}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script></script>
+  <footer class="">
+    
+  </footer>
+
+  <script></script>
+</BaseLayout>
