@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/starlight": "^0.22.1",
+    "@astrojs/starlight-tailwind": "^2.0.2",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/mada": "^5.0.5",
     "@fontsource-variable/montserrat": "^5.0.19",
