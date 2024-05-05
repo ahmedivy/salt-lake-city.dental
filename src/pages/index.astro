@@ -4,9 +4,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import { Image } from "astro:assets";
 import arrow from "../images/arrow.svg";
-import doctorImage from "../images/doctor.png";
 import teethImage from "../images/teeth.svg";
 import toothbrushImage from "../images/toothbrush.svg";
+
+import { content } from "../content/_landing";
+import ServiceCard from "../components/ServiceCard.astro";
 ---
 
 <BaseLayout title="SaltLakeCity.Dental">
@@ -28,20 +30,22 @@ import toothbrushImage from "../images/toothbrush.svg";
     <header
       class="container mx-auto w-full flex items-center p-4 lg:px-8 lg:py-4 lg:bg-background-200 lg:rounded-3xl lg:mt-5 opacity-100"
     >
-      <h1 class="font-montserrat text-lg">SaltLakeCity.dental</h1>
+      <h1 class="font-montserrat text-lg">{content.title}</h1>
       <nav
         class="hidden lg:flex items-center lg:gap-8 ml-auto text-black font-semibold text-md"
       >
-        <a href="#meet-the-doctor" class="">Meet The Doctor</a>
-        <a href="#" class="">Services</a>
-        <a href="#" class="">Blog</a>
-        <a href="#" class="">Documentation</a>
-
+        {
+          content.navItems.map((item) => (
+            <a href={item.url} class="">
+              {item.title}
+            </a>
+          ))
+        }
         <a
-          href="#"
+          href={content.navButton.url}
           class="bg-foreground text-white px-4 py-2 rounded-xl lg:ml-6"
         >
-          Book a Consult
+          {content.navButton.title}
         </a>
       </nav>
 
@@ -82,7 +86,7 @@ import toothbrushImage from "../images/toothbrush.svg";
           class="size-[300px] lg:size-[700px] rounded-full absolute -top-[80px] left-[70%] bg-primary blur-3xl opacity-70 -z-30"
         >
           <div class="flex items-center justify-between">
-            <a class="font-montserrat text-lg" href="/">SaltLakeCity.dental</a>
+            <a class="font-montserrat text-lg" href="/">{content.title}</a>
 
             <button
               type="button"
@@ -108,14 +112,13 @@ import toothbrushImage from "../images/toothbrush.svg";
           <div class="mt-6 flow-root px-2">
             <div class="-my-6 divide-y divide-gray-500/10">
               <div class="space-y-4 py-6 mt-10">
-                <a href="#meet-the-doctor" class="font-semibold block text-lg"
-                  >Meet The Doctor</a
-                >
-                <a href="#services" class="font-semibold block text-lg"
-                  >Services</a
-                >
-                <a href="/blog" class="font-semibold block text-lg">Blog</a>
-                <a href="/docs" class="font-semibold block text-lg">Docs</a>
+                {
+                  content.navItems.map((item) => (
+                    <a href={item.url} class="font-semibold block text-lg">
+                      {item.title}
+                    </a>
+                  ))
+                }
               </div>
             </div>
           </div>
@@ -128,15 +131,14 @@ import toothbrushImage from "../images/toothbrush.svg";
       <h2
         class="text-4xl lg:text-6xl font-mada lg:mt-10 leading-[50px] lg:leading-[80px] tracking-normal max-w-[500px] text-center"
       >
-        High End Dentistry and Smile Design
+        {content.hero.title}
       </h2>
       <p
         class="font-medium text-lg lg:text-xl max-w-[530px] text-center lg:mt-3"
       >
-        Preventative care, cosmetic dentistry, and modern implant solutions in
-        Salt Lake City
+        {content.hero.subtitle}
       </p>
-      <Button> Book a Consult </Button>
+      <Button> {content.hero.button.title} </Button>
       <div class="flex items-center gap-4">
         <span class="w-8 h-[0.5px] bg-foreground-200/50"></span>
         <span class="text-foreground-200/50 uppercase text-xs tracking-wider"
@@ -167,35 +169,102 @@ import toothbrushImage from "../images/toothbrush.svg";
       class="container mx-auto px-8 py-24 lg:px-48 lg:py-40 bg-primary-400 lg:rounded-[3rem]"
     >
       <h2 class="text-4xl lg:text-7xl font-mada text-center mb-16 lg:mb-32">
-        Meet The Doctor
+        {content.meetTheDoctor.title}
       </h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4">
         <div class="">
           <Image
-            src={doctorImage}
+            src={content.meetTheDoctor.doctorProfile}
             alt="Dr. Cierra Diamse"
-            class="rounded-3xl mx-auto"
+            class="rounded-3xl mx-auto max-lg:w-60"
           />
         </div>
         <div class="mx-auto">
           <p class="text-lg max-w-[500px]">
             <span class="font-bold text-xl block mb-2">
-              Dr. Cierra Diamse
+              {content.meetTheDoctor.doctorName}
             </span>
-            is committed to promoting a holistic approach to dental wellness. Her
-            primary objective is to assist each patient in achieving a beautiful
-            smile while also enjoying optimal oral health. Through the emphasis on
-            preventative care and cosmetic excellence and the use of modern techniques
-            combined with personalized attention, Dr. Diamse delivers unmatched service.
+            {content.meetTheDoctor.doctorDescription}
           </p>
-          <h3 class="text-lg font-semibold my-6">Credentials and Expertise</h3>
+          <h3 class="text-lg font-semibold my-6">
+            {content.meetTheDoctor.expertise.title}
+          </h3>
           <ul class="font-semibold list-disc pl-5">
-            <li>Board certified with over 10 years of experience</li>
-            <li>Specialized training in cosmetic dentistry and smile design</li>
-            <li>Member of [Relevant Dental Associations]</li>
-            <li>[Any other significant achievements or certifications]</li>
+            {
+              content.meetTheDoctor.expertise.list.map((item) => (
+                <li>{item}</li>
+              ))
+            }
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+  <section
+    id="transforming-smiles"
+    class="bg-foreground-200 py-12 md:py-20 lg:py-28"
+  >
+    <div
+      class="container mx-auto flex flex-col items-center gap-2 md:gap-4 lg:gap-8"
+    >
+      <h2
+        class="text-4xl lg:text-6xl text-white text-center p-6 max-w-[600px] lg:leading-snug font-mada"
+      >
+        {content.transformingSmiles.title}
+      </h2>
+      <div
+        class="bg-white grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-48 rounded-3xl py-16 lg:py-24 px-16 lg:px-48 lg:w-full"
+      >
+        <div class="flex flex-col items-center justify-center mx-auto gap-4">
+          <Image
+            src={content.transformingSmiles.before.image}
+            alt="Before"
+            class="size-48 lg:size-72"
+          />
+          <p class="text-lg">
+            {content.transformingSmiles.before.description}
+          </p>
+        </div>
+        <div class="flex flex-col items-center justify-center mx-auto gap-4">
+          <Image
+            src={content.transformingSmiles.after.image}
+            alt="After"
+            class="size-48 lg:size-72"
+          />
+          <p class="text-lg">
+            {content.transformingSmiles.after.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="services" class="bg-background py-12 md:py-24 lg:py-32">
+    <div class="mx-auto container max-lg:p-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <h2
+          class="text-4xl lg:text-6xl p-6 lg:leading-snug font-mada max-w-96 mx-auto"
+        >
+          {content.services.title}
+        </h2>
+        <div class="my-6 max-w-[450px]">
+          <p class="text-lg">
+            {content.services.description}
+          </p>
+          <Button class="mt-12"> {content.services.button.title} </Button>
+        </div>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 lg:px-48 mt-16"
+      >
+        {
+          content.services.list.map((service) => (
+            <ServiceCard
+              src={service.image}
+              description={service.description}
+              alt={service.description}
+            />
+          ))
+        }
       </div>
     </div>
   </section>
