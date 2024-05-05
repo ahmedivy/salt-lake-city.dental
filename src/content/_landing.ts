@@ -1,5 +1,6 @@
 import afterImage from "../images/after-pic.png";
 import beforeImage from "../images/before-pic.png";
+import clinicPic from "../images/clinic-pic.png";
 import doctorProfile from "../images/doctor-profile.png";
 import servicePlaceholder from "../images/services-placeholder.jpg";
 
@@ -106,5 +107,13 @@ export const content: LandingPage = {
       "Dr Diamse is probably the best dentist I have seen in years. She cares and I trust her! At first I was reluctant to be seen by anyone else but I am glad I saw Dr. Diamse she is a very skilled dentist.  I left the dentist office HAPPY!  She helped me with so much more than I anticipated a dentist ever would.  I am so happy, I never want to see another dentist but her. I'll say it again, she cares.  She seems to be better skilled to do my top implants than other dentists.",
     reviewerProfile: "https://avatar.vercel.sh/jen-o.svg?text=JO",
     reviewLink: "https://maps.app.goo.gl/pAF3ec262ezWocZj7",
+  },
+  contact: {
+    title: "Visit The Clinic",
+    description:
+      "Some Text here about the clinic. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    address: "718 Coliseum Way, Midvale, UT 84047",
+    phone: "+1 (801) 590 - 8694",
+    image: clinicPic,
   },
 };

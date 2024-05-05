@@ -55,4 +55,11 @@ export type LandingPage = {
     reviewerProfile: string;
     reviewLink: string;
   };
+  contact: {
+    title: string;
+    description: string;
+    address: string;
+    phone: string;
+    image: ImageMetadata;
+  };
 };
