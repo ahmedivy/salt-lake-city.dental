@@ -100,4 +100,11 @@ export const content: LandingPage = {
       },
     ],
   },
+  testimonials: {
+    reviewerName: "Jen O.",
+    review:
+      "Dr Diamse is probably the best dentist I have seen in years. She cares and I trust her! At first I was reluctant to be seen by anyone else but I am glad I saw Dr. Diamse she is a very skilled dentist.  I left the dentist office HAPPY!  She helped me with so much more than I anticipated a dentist ever would.  I am so happy, I never want to see another dentist but her. I'll say it again, she cares.  She seems to be better skilled to do my top implants than other dentists.",
+    reviewerProfile: "https://avatar.vercel.sh/jen-o.svg?text=JO",
+    reviewLink: "https://maps.app.goo.gl/pAF3ec262ezWocZj7",
+  },
 };

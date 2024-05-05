@@ -49,4 +49,10 @@ export type LandingPage = {
       image: ImageMetadata;
     }[];
   };
+  testimonials: {
+    reviewerName: string;
+    review: string;
+    reviewerProfile: string;
+    reviewLink: string;
+  };
 };
