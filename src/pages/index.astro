@@ -180,7 +180,7 @@ import ServiceCard from "../components/ServiceCard.astro";
           />
         </div>
         <div class="mx-auto">
-          <p class="text-lg max-w-[500px]">
+          <p class="lg:text-lg max-w-[500px]">
             <span class="font-bold text-xl block mb-2">
               {content.meetTheDoctor.doctorName}
             </span>
@@ -239,22 +239,22 @@ import ServiceCard from "../components/ServiceCard.astro";
     </div>
   </section>
   <section id="services" class="bg-background py-12 md:py-24 lg:py-32">
-    <div class="mx-auto container max-lg:p-4">
+    <div class="mx-auto container max-lg:p-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <h2
-          class="text-4xl lg:text-6xl p-6 lg:leading-snug font-mada max-w-96 mx-auto"
+          class="text-4xl lg:text-6xl lg:leading-snug font-mada max-w-96 mx-auto"
         >
           {content.services.title}
         </h2>
         <div class="my-6 max-w-[450px]">
-          <p class="text-lg">
+          <p class="lg:text-lg">
             {content.services.description}
           </p>
           <Button class="mt-12"> {content.services.button.title} </Button>
         </div>
       </div>
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 lg:px-48 mt-16"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 lg:px-48 mt-16 place-items-center"
       >
         {
           content.services.list.map((service) => (
@@ -271,16 +271,5 @@ import ServiceCard from "../components/ServiceCard.astro";
 </BaseLayout>
 
 <script>
-  function toggleMenu() {
-    const mobileMenu = document.querySelector('[role="dialog"]');
-    if (!mobileMenu) return;
-    mobileMenu.classList.toggle("hidden");
-  }
-
-  document
-    .getElementById("mobile-menu-button")
-    ?.addEventListener("click", toggleMenu);
-  document
-    .getElementById("mobile-menu-button-close")
-    ?.addEventListener("click", toggleMenu);
+  
 </script>
