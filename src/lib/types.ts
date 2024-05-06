@@ -52,7 +52,7 @@ export type LandingPage = {
   testimonials: {
     reviewerName: string;
     review: string;
-    reviewerProfile: string;
+    reviewerProfile: ImageMetadata;
     reviewLink: string;
   };
   contact: {
@@ -61,5 +61,33 @@ export type LandingPage = {
     address: string;
     phone: string;
     image: ImageMetadata;
+  };
+  footer: {
+    social: {
+      title: string;
+      list: {
+        title: string;
+        url: string;
+      }[];
+    };
+    about: {
+      title: string;
+      list: {
+        title: string;
+        url: string;
+      }[];
+    },
+    documentation: {
+      title: string;
+      list: {
+        title: string;
+        url: string;
+      }[];
+    },
+    newsLetter: {
+      message: string;
+    },
+    copyRight: string;
+    copyRightDescription: string;
   };
 };

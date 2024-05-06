@@ -1,10 +1,14 @@
 import afterImage from "../images/after-pic.png";
 import beforeImage from "../images/before-pic.png";
-import clinicPic from "../images/clinic-pic.png";
 import doctorProfile from "../images/doctor-profile.png";
 import servicePlaceholder from "../images/services-placeholder.jpg";
+import clinicPic from "../images/smile-clinic.png";
+
+import reviewer from "../images/reviewer.jpg";
 
 import type { LandingPage } from "../lib/types";
+
+const year: number = new Date().getFullYear();
 
 export const content: LandingPage = {
   title: "SaltLakeCity.dental",
@@ -105,7 +109,7 @@ export const content: LandingPage = {
     reviewerName: "Jen O.",
     review:
       "Dr Diamse is probably the best dentist I have seen in years. She cares and I trust her! At first I was reluctant to be seen by anyone else but I am glad I saw Dr. Diamse she is a very skilled dentist.  I left the dentist office HAPPY!  She helped me with so much more than I anticipated a dentist ever would.  I am so happy, I never want to see another dentist but her. I'll say it again, she cares.  She seems to be better skilled to do my top implants than other dentists.",
-    reviewerProfile: "https://avatar.vercel.sh/jen-o.svg?text=JO",
+    reviewerProfile: reviewer,
     reviewLink: "https://maps.app.goo.gl/pAF3ec262ezWocZj7",
   },
   contact: {
@@ -115,5 +119,61 @@ export const content: LandingPage = {
     address: "718 Coliseum Way, Midvale, UT 84047",
     phone: "+1 (801) 590 - 8694",
     image: clinicPic,
+  },
+  footer: {
+    social: {
+      title: "Social",
+      list: [
+        {
+          title: "Instagram",
+          url: "#",
+        },
+      ],
+    },
+    about: {
+      title: "SLC Dental",
+      list: [
+        {
+          title: "About",
+          url: "#",
+        },
+        {
+          title: "Blog",
+          url: "/blog",
+        },
+        {
+          title: "Contact",
+          url: "#contact",
+        },
+      ],
+    },
+    documentation: {
+      title: "Documentation",
+      list: [
+        {
+          title: "Detailed Services",
+          url: "/docs",
+        },
+        {
+          title: "Case Studies",
+          url: "/docs",
+        },
+        {
+          title: "Patient Education",
+          url: "/docs",
+        },
+        {
+          title: "Status",
+          url: "/docs",
+        },
+      ],
+    },
+    newsLetter: {
+      message:
+        "You'll receive occasional emails from Highnote. You always have the choice to unsubscribe within every email.",
+    },
+    copyRight: `© ${year} SaltLakeCity.dental`,
+    copyRightDescription:
+      "SaltLakeCity.dental is the top provider in comprehensive full-service oral health care and dental wellness.",
   },
 };
