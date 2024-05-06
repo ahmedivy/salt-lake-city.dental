@@ -1,5 +1,5 @@
-import afterImage from "../images/after-pic.png";
-import beforeImage from "../images/before-pic.png";
+import afterImage from "../images/after-pic.jpg";
+import beforeImage from "../images/before-pic.jpg";
 import doctorProfile from "../images/doctor-profile.png";
 import servicePlaceholder from "../images/services-placeholder.jpg";
 import clinicPic from "../images/smile-clinic.png";
