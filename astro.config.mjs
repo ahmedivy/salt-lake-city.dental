@@ -1,6 +1,6 @@
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
-import starlightBlog from 'starlight-blog'
+import starlightBlog from "starlight-blog";
 
 import starlight from "@astrojs/starlight";
 
@@ -19,7 +19,13 @@ export default defineConfig({
         "@fontsource/palanquin/500.css",
         "@fontsource/palanquin/600.css",
       ],
-      plugins: [starlightBlog()],
+      plugins: [starlightBlog({})],
+      sidebar: [
+        {
+          label: "Docs",
+          autogenerate: { directory: "docs" },
+        },
+      ],
     }),
   ],
 });
