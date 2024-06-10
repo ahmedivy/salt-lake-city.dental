@@ -17,7 +17,7 @@ import FooterList from "../components/home/FooterList.astro";
 <BaseLayout title="SaltLakeCity.Dental">
   <main class="min-h-screen relative w-full overflow-x-hidden flex flex-col">
     <div
-      class="size-[60vh]  rounded-full absolute -top-[150px] left-[45%] bg-accent -z-10 blur-3xl opacity-70"
+      class="size-[60vh] rounded-full absolute -top-[150px] left-[45%] bg-accent -z-10 blur-3xl opacity-70"
     >
     </div>
     <div
@@ -74,13 +74,11 @@ import FooterList from "../components/home/FooterList.astro";
         </svg>
       </button>
 
-      <div class="hidden" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 z-10"></div>
-        <div
-          class="size-[300px] lg:size-[700px] rounded-full absolute -top-[80px] left-[70%] bg-primary blur-3xl opacity-70 -z-30"
-        >
-          <div class="flex items-center justify-between">
-            <a class="font-montserrat text-lg" href="/">{content.title}</a>
+      <div class="hidden" role="dialog" aria-modal="true" id="mobile-menu">
+            
+        <div class="bg-white w-full h-full fixed inset-0 z-50">
+          <div class="flex items-center justify-between p-4">
+            <a class="font-montserrat text-md" href="/">{content.title}</a>
 
             <button
               type="button"
@@ -105,10 +103,10 @@ import FooterList from "../components/home/FooterList.astro";
           </div>
           <div class="mt-6 flow-root px-2">
             <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-4 py-6 mt-10">
+              <div class="space-y-4 py-6 mt-10 px-4">
                 {
                   content.navItems.map((item) => (
-                    <a href={item.url} class="font-semibold block text-lg">
+                    <a href={item.url} class="font-semibold block text-lg" aria-details="mobile-nav-item">
                       {item.title}
                     </a>
                   ))
@@ -116,7 +114,7 @@ import FooterList from "../components/home/FooterList.astro";
               </div>
             </div>
           </div>
-        </div>
+
       </div>
     </header>
     <div
@@ -153,15 +151,19 @@ import FooterList from "../components/home/FooterList.astro";
     </div>
   </main>
   <section id="meet-the-doctor" class="w-full lg:py-40 bg-background relative">
-    <div
-      class="absolute bottom-[2vh] left-[2vh]"
-    >
-      <Image src={toothbrushImage} alt="Toothbrush" class="lg:scale-75 w-[8vw]" />
-      <Image src={arrow} alt="Arrow" class="lg:scale-75 lg:-translate-y-12 w-[9vw]" />
+    <div class="absolute bottom-[2vh] left-[2vh]">
+      <Image
+        src={toothbrushImage}
+        alt="Toothbrush"
+        class="lg:scale-75 w-[8vw]"
+      />
+      <Image
+        src={arrow}
+        alt="Arrow"
+        class="lg:scale-75 lg:-translate-y-12 w-[9vw]"
+      />
     </div>
-    <div
-      class="container py-24 lg:py-28 bg-primary-400 lg:rounded-[3rem]"
-    >
+    <div class="container py-24 lg:py-28 bg-primary-400 lg:rounded-[3rem]">
       <h2 class="text-4xl lg:text-7xl font-mada text-center mb-16 lg:mb-32">
         {content.meetTheDoctor.title}
       </h2>
@@ -198,9 +200,7 @@ import FooterList from "../components/home/FooterList.astro";
     id="transforming-smiles"
     class="bg-foreground-200 py-12 md:py-20 lg:py-28"
   >
-    <div
-      class=" flex flex-col items-center gap-2 md:gap-4 lg:gap-8"
-    >
+    <div class="flex flex-col items-center gap-2 md:gap-4 lg:gap-8">
       <h2
         class="text-4xl lg:text-6xl text-white text-center p-6 max-w-[600px] lg:leading-snug font-mada"
       >
@@ -246,7 +246,7 @@ import FooterList from "../components/home/FooterList.astro";
         </div>
       </div>
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 mt-16 "
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12 mt-16"
       >
         {
           content.services.list.map((service) => (
@@ -289,10 +289,12 @@ import FooterList from "../components/home/FooterList.astro";
     </div>
   </section>
   <section id="contact" class="py-12 lg:py-24 bg-background relative">
-    <div
-      class="absolute top-[10vh] right-[10vh]"
-    >
-      <Image src={tooth} alt="Tooth" class="w-[6vw] max-w-[40px] -translate-x-8" />
+    <div class="absolute top-[10vh] right-[10vh]">
+      <Image
+        src={tooth}
+        alt="Tooth"
+        class="w-[6vw] max-w-[40px] -translate-x-8"
+      />
       <Image src={bottomArrow} alt="Arrow" class="w-[6vw] max-w-[50px]" />
     </div>
     <div class="container">
@@ -332,9 +334,7 @@ import FooterList from "../components/home/FooterList.astro";
       class="size-[100px] lg:size-[300px] absolute rounded-full -bottom-40 right-40 bg-primary z-10 blur-2xl opacity-40"
     >
     </div>
-    <div
-      class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-4 container py-4"
-    >
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-4 container py-4">
       <FooterList
         title={content.footer.social.title}
         items={content.footer.social.list}
@@ -386,4 +386,16 @@ import FooterList from "../components/home/FooterList.astro";
   </footer>
 </BaseLayout>
 
-<script></script>
+<script>
+  document
+    .getElementById("mobile-menu-button")
+    ?.addEventListener("click", () => {
+      document.getElementById("mobile-menu")?.classList.toggle("hidden");
+    });
+
+  document
+    .getElementById("mobile-menu-button-close")
+    ?.addEventListener("click", () => {
+      document.getElementById("mobile-menu")?.classList.add("hidden");
+    });
+</script>
