@@ -27,7 +27,7 @@ import FooterList from "../components/home/FooterList.astro";
     <Image
       src={teethImage}
       alt="Teeth"
-      class="absolute bottom-[20vh] md:bottom-[25vh] right-[20vw] w-[80px] md:w-[10vw]"
+      class="absolute bottom-[20vh] md:bottom-[25vh] right-[20vw] w-[10vw] min-w-[20px]"
     />
 
     <header
@@ -154,10 +154,10 @@ import FooterList from "../components/home/FooterList.astro";
   </main>
   <section id="meet-the-doctor" class="w-full lg:py-40 bg-background relative">
     <div
-      class="absolute bottom-0 left-0 lg:bottom-10 lg:left-10 hidden lg:block"
+      class="absolute bottom-[2vh] left-[2vh]"
     >
-      <Image src={toothbrushImage} alt="Toothbrush" class="lg:scale-75" />
-      <Image src={arrow} alt="Arrow" class="g:scale-75 lg:-translate-y-12" />
+      <Image src={toothbrushImage} alt="Toothbrush" class="lg:scale-75 w-[8vw]" />
+      <Image src={arrow} alt="Arrow" class="lg:scale-75 lg:-translate-y-12 w-[9vw]" />
     </div>
     <div
       class="container py-24 lg:py-28 bg-primary-400 lg:rounded-[3rem]"
@@ -290,10 +290,10 @@ import FooterList from "../components/home/FooterList.astro";
   </section>
   <section id="contact" class="py-12 lg:py-24 bg-background relative">
     <div
-      class="absolute top-10 right-10 lg:top-20 lg:right-60 hidden lg:block"
+      class="absolute top-[10vh] right-[10vh]"
     >
-      <Image src={tooth} alt="Toothbrush" class="h-16 -translate-x-8" />
-      <Image src={bottomArrow} alt="Arrow" class="w-16" />
+      <Image src={tooth} alt="Tooth" class="w-[6vw] max-w-[40px] -translate-x-8" />
+      <Image src={bottomArrow} alt="Arrow" class="w-[6vw] max-w-[50px]" />
     </div>
     <div class="container">
       <h2 class="text-4xl lg:text-7xl">
@@ -323,7 +323,6 @@ import FooterList from "../components/home/FooterList.astro";
       </div>
     </div>
   </section>
-
   <footer class="bg-[#333333] pt-4 lg:pt-16 relative overflow-y-hidden">
     <div
       class="size-[100px] lg:size-[300px] absolute rounded-full -bottom-40 right-0 bg-accent z-10 blur-2xl opacity-40"
