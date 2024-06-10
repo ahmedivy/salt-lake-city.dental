@@ -15,6 +15,7 @@ h6 {
 a.site-title {
   font-family: "Montserrat Variable", sans-serif;
   color: var(--bg-foreground);
+  font-size: large;
 }
 
 /* Dark mode colors. */
