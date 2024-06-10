@@ -7,7 +7,7 @@
     --primary-100: #5cb8b2;
     --primary-200: #3c9b95;
     --primary-300: #005a56;
-    --primary-400: #78C6B8;
+    --primary-400: #78c6b8;
     --accent-100: #ff6f61;
     --accent-200: #8f0010;
     --accent-300: #ed7868;
@@ -34,6 +34,6 @@
   }
 
   body {
-    @apply text-foreground;
+    @apply bg-background text-foreground;
   }
 }

@@ -4,7 +4,17 @@ import defaultTheme from "tailwindcss/defaultTheme";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        lg: "1280px",
+        xl: "1280px",
+        "2xl": "1280px",
+      }
+    },
     extend: {
+
       fontFamily: {
         montserrat: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
         palanquin: ["Palanquin", ...defaultTheme.fontFamily.sans],
