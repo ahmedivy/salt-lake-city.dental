@@ -26,6 +26,9 @@ export default defineConfig({
           autogenerate: { directory: "docs" },
         },
       ],
+      components: {
+        ThemeSelect: "./src/components/ThemeSelect.astro",
+      }
     }),
   ],
 });
