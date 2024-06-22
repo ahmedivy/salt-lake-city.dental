@@ -40,6 +40,7 @@ export function EmailForm({ buttonCss, inputCss }) {
         type="email"
         placeholder="Email address"
         value={email}
+        required
         onChange={(e) => setEmail(e.target.value)}
         className={cn(inputCss)}
       />
