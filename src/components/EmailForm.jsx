@@ -10,6 +10,11 @@ export function EmailForm({ buttonCss, inputCss }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!email) {
+      toast.error("Please enter an email address.");
+      return;
+    }
+
     setIsLoading(true);
     const res = await fetch(import.meta.env.PUBLIC_EMAIL_SUBMIT_URL, {
       method: "POST",
